@@ -13,8 +13,8 @@ This project demonstrates the use of Retrieval-Augmented Generation (RAG) with a
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone ...
+cd into the repo directory
 ```
 
 ### 2. Install Qdrant
@@ -53,7 +53,7 @@ You can also set these variables in a \`.env\` file and load it automatically us
 To save embeddings to Qdrant, run the following script:
 
 ```bash
-python RAG/save.py
+python save.py
 ```
 
 This will generate embeddings and store them in your Qdrant instance.
@@ -63,6 +63,6 @@ This will generate embeddings and store them in your Qdrant instance.
 To query similar items using the saved embeddings, run:
 
 ```bash
-python RAG/query.py
+python query.py
 ```
 EOL
