@@ -12,18 +12,18 @@ This project demonstrates the use of Retrieval-Augmented Generation (RAG) with a
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
-\`\`\`
+```
 
 ### 2. Install Qdrant
 
 You need a running instance of Qdrant. If you're using Docker, you can pull and run the container:
 
-\`\`\`bash
+```bash
 docker run -p 6333:6333 qdrant/qdrant
-\`\`\`
+```
 
 This will expose Qdrant on \`http://localhost:6333/\`.
 
@@ -33,18 +33,18 @@ Alternatively, follow the [Qdrant installation guide](https://qdrant.tech/docume
 
 Install the Python dependencies from \`requirements.txt\`:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### 4. Set Environment Variables
 
 Make sure to set the necessary environment variables:
 
-\`\`\`bash
+```
 export OPENAI_API_KEY=your-openai-api-key
 export QDRANT_CLIENT=http://localhost:6333/
-\`\`\`
+```
 
 You can also set these variables in a \`.env\` file and load it automatically using \`python-dotenv\`.
 
@@ -52,9 +52,9 @@ You can also set these variables in a \`.env\` file and load it automatically us
 
 To save embeddings to Qdrant, run the following script:
 
-\`\`\`bash
+```bash
 python RAG/save.py
-\`\`\`
+```
 
 This will generate embeddings and store them in your Qdrant instance.
 
@@ -62,7 +62,7 @@ This will generate embeddings and store them in your Qdrant instance.
 
 To query similar items using the saved embeddings, run:
 
-\`\`\`bash
+```bash
 python RAG/query.py
-\`\`\`
+```
 EOL
