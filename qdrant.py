@@ -124,13 +124,17 @@ class Qdrant:
                     query_vector=query["dense"],
                     with_payload=True,
                     limit=1000)
-
             response = {}
-            for point in result:
-                response["result"] = [ {
-                    "score": point.score,**point.payload 
-                }]
-            print(response)
+            
+            # Extracting and formatting the relevant points
+            for i, point in enumerate(result):
+                # Formatting the response to include the relevant data (like authors and content)
+                response[i] = {
+                    "id": point.id,
+                    "score": point.score,
+                    "authors": point.payload.get('authors', 'Unknown'),
+                    "content": point.payload.get('content', 'No content available')
+                }
             return response
 
         prefetch = [
@@ -147,7 +151,7 @@ class Qdrant:
                             limit=25,
                 )
         ]
-
+     
         # Finally rerank the results with the late interaction model.
         result = self.client.query_points(
             collection,

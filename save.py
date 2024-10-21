@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import logging
-from embedding import openai_embedding_model,sparse_vector, late_interaction
+from embedding import openai_embedding_model#,sparse_vector, late_interaction
 from qdrant import Qdrant
 import traceback
 
@@ -75,7 +75,7 @@ data1 = [
 df = pd.DataFrame(data1)
 
 # storing dense embedding only
-# test = Save().save_to_collection("testing_dense",df,"dense")
+test = Save().save_to_collection("testing_dense",df,"dense")
    
 # storing hybrid collection
-test = Save().save_to_collection("testing",df)
+# test = Save().save_to_collection("testing",df)

@@ -1,5 +1,5 @@
 import numpy as np
-from embedding import openai_embedding_model, sparse_vector, late_interaction
+from embedding import openai_embedding_model#, sparse_vector, late_interaction
 from qdrant import Qdrant
 from llm_response import get_result_from_llm_background
 import traceback
@@ -74,7 +74,7 @@ class RAG:
             return None
 
 # testing making a query from dense
-# print(RAG().result("advancementes in ai", "testing_dense","dense"))
-
+print(RAG().result("how can i deploy models", "testing_dense","dense"))
+# 
 # testing making query from hybrid
-print(RAG().result("advancementes in ai", "testing"))
+# print(RAG().result("deployment", "testing"))

@@ -2,7 +2,7 @@ import openai
 import time
 import numpy as np
 import os
-from fastembed import SparseTextEmbedding, LateInteractionTextEmbedding
+# from fastembed import SparseTextEmbedding, LateInteractionTextEmbedding
 import logging
 from dotenv import load_dotenv
 
@@ -43,25 +43,25 @@ def openai_embedding_model(batch):
     return embeddings
 
 # Function to generate sparse vectors
-def sparse_vector(context_list):
-    try:
-        logger.info("Generating sparse embeddings")
-        model_bm42 = SparseTextEmbedding(model_name=SPARSE_MODEL)
-        sparse_embeddings = list(model_bm42.passage_embed(context_list))
-        return sparse_embeddings
+# def sparse_vector(context_list):
+#     try:
+#         logger.info("Generating sparse embeddings")
+#         model_bm42 = SparseTextEmbedding(model_name=SPARSE_MODEL)
+#         sparse_embeddings = list(model_bm42.passage_embed(context_list))
+#         return sparse_embeddings
 
-    except Exception as e:
-        logger.error(f"Error generating sparse vector: {e}")
-        return None
+#     except Exception as e:
+#         logger.error(f"Error generating sparse vector: {e}")
+#         return None
 
-# Function for late interaction embeddings
-def late_interaction(context_list):
+# # Function for late interaction embeddings
+# def late_interaction(context_list):
     
-    logger.info(f"Embedding batch ")
-    try:
-        logger.info("sparse_embed")
-        lateInteraction = LateInteractionTextEmbedding(LATENT_MODEL)
-        late_interaction = list(lateInteraction.passage_embed(context_list))
-        return late_interaction
-    except Exception as e:
-        logger.info("error getting latent interaction")
+#     logger.info(f"Embedding batch ")
+#     try:
+#         logger.info("sparse_embed")
+#         lateInteraction = LateInteractionTextEmbedding(LATENT_MODEL)
+#         late_interaction = list(lateInteraction.passage_embed(context_list))
+#         return late_interaction
+#     except Exception as e:
+#         logger.info("error getting latent interaction")
